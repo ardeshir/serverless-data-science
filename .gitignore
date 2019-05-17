@@ -1,6 +1,7 @@
 # Distribution / packaging
 .Python
 *.pyc
+__pycache__
 env/
 build/
 develop-eggs/
@@ -17,6 +18,6 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
-
+.requirements.zip
 # Serverless directories
 .serverless

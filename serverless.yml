@@ -49,12 +49,11 @@ functions:
   train:
     handler: train.trainHandler
     timeout: 30
-    memory: 3008
     events:
       - http:
           path: train
           method: post
-          async: true
+          #async: true
   infer:
     handler: infer.inferHandler
     timeout: 30
@@ -63,8 +62,22 @@ functions:
           path: infer
           method: post 
 
-
-
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    zip: true
+    slim: true
+    noDeploy:
+      - boto3
+      - botocore
+      - docutils
+      - jmespath
+      - pip
+      - python-dateutil
+      - s3transfer
+      - setuptools
+      - six
+      - tensorboard
 
 
 #    The following are a few example events you can configure
